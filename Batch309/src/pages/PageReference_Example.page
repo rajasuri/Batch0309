@@ -1,0 +1,15 @@
+<apex:page controller="PageReference_Example">
+    <apex:form >
+    	<apex:pageBlock title="Accout">
+        	<apex:pageBlockButtons location="top">
+                <apex:commandButton value="Save" action="{!create}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:inputField value="{!acc.Name}" />
+                <apex:inputField value="{!acc.Phone}" />
+                <apex:inputField value="{!acc.Industry}" />
+                <apex:inputField value="{!acc.Rating}" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

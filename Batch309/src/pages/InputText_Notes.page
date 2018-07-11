@@ -1,0 +1,57 @@
+<!--
+<apex:inputText> 
+1. This is used to create inputText box in the VF page .
+2. Attribute : 
+   a.value : 
+	 	1. This will reffer to variable in the Apex class .
+		2. What ever the value is defined in the apex class that will be displayed in the inputtext
+		3. If we enter any value ,that will be stored to the given variable.
+	b. size : 
+		1. It will take integer value.
+		2. This will specify the length of the inputText box
+
+	c. MaxLenght:
+		1. It will take integer value.
+		2. This will specify maximum length of the input what we can enter
+	
+	d. Direction :
+		1. It will specify direction of the content in the inputTextBox 
+		2. Possible values are RTL (Right to Left ) LTR( Left to Right)
+
+	e. Disabled  : 
+		1. It is a boolean value .
+		2. When set as true,inputText box will be disabled.
+	
+	f. rendered  : 
+		1. it is a boolean value.
+		2. When set as true inputTextBox will be disabled.
+		3. When set as false ,inputTextBox will be hidden.
+	
+	g. Style : 
+	   1. This will specify the css on the inputText 
+	
+	h. required : 
+		1. It is boolean value 
+		2. When set as true ,we cant submit the form ,without this value.
+	
+	i.title  :
+		1. It is string message .
+		2. When we keep a cursor on the inputText box ,pop-up window will be display this message.
+
+-->
+
+
+<apex:page controller="Input_Text" >
+    <apex:form >
+        InputText : <apex:inputText /> <br/><br/>
+        InputValue: <apex:inputText value="{!name}" /><br/><br/>
+        MaxSize	  :<apex:inputText size="5" /><br/><br/>
+        MaxLength :<apex:inputText maxlength="5" /><br/><br/>
+        Direction :<apex:inputText dir="RTL" /><br/><br/>
+        Disabled  :<apex:inputText disabled="true" /><br/><br/>
+        Rendered   :<apex:inputText rendered="false" /><br/><br/>
+        Style	  :<apex:inputText style="width:100px;color:red;background:yellow;" /><br/><br/>
+        Required  :<apex:inputText required="true" /><br/><br/>
+        Title	  :<apex:inputText title="LastName" />
+    </apex:form>
+</apex:page>

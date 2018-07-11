@@ -1,0 +1,7 @@
+<apex:page standardController="Opportunity">
+    <apex:sectionHeader title="Opportunity" subtitle="New Opportunity" />
+    <br/><br/>
+    Name : {! Opportunity.Name} <br/>
+    Stage: {! Opportunity.stagename} <br/>
+    Closedate:{!Opportunity.closeDate}
+</apex:page>

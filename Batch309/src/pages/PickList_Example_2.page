@@ -1,0 +1,26 @@
+<apex:page controller="PickList_Example_2">
+   
+    <apex:form >
+        <apex:pageBlock title="Field Dependency" id="pb">
+            <apex:pageBlockSection columns="1">
+                
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="City" />
+                     <apex:selectList size="1" styleClass="box" value="{!selected}">
+        				<apex:selectOptions value="{!cities}" />
+                         <!-- This will be  invoked when city value is modified -->
+                         <apex:actionSupport event="change" action="{!invoke}" reRender="pb" />
+        		    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Places" />
+                    <apex:selectList size="1" styleClass="box" value="{!selected}">
+            			<apex:selectOptions value="{!places}" />
+            		 </apex:selectList>
+                </apex:pageBlockSectionItem>   
+                
+            </apex:pageBlockSection>
+       </apex:pageBlock> 
+    </apex:form>
+</apex:page>

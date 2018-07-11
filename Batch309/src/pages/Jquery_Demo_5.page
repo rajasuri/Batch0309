@@ -1,0 +1,18 @@
+<apex:page >
+    <script src="https://code.jquery.com/jquery-1.8.2.js">
+    </script>
+    <script src="https://code.jquery.com/ui/1.9.0/jquery-ui.js" >
+    </script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css"/>
+    <script>
+    	var j$=jQuery.noConflict();
+    	var names=['Ram','Ramu','Raju','Hari','Harish','Satish','Sam','Sashi'];
+    	j$(document).ready(function(){
+        	j$('[Id$=one]').autocomplete({ source : names });
+        });
+    </script>
+    <apex:form >
+        CityNames : <apex:inputText id="one"/>
+        
+    </apex:form>
+</apex:page>

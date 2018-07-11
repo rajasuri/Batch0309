@@ -1,0 +1,7 @@
+<apex:page controller="Schema_Example_2">
+    <apex:pageBlock title="Field Name" >
+    	<apex:pageBlockTable value="{!fields}" var="a">
+            <apex:column value="{!a}" headerValue="Field Name" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

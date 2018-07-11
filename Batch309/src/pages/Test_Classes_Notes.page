@@ -1,0 +1,47 @@
+<apex:page >
+    Test Classes :
+    1. If you want to deploy the code from sandbox to production ,we need to get overall code coverage of 
+       75% 
+    2. To achive this code coverage we create unittesting 
+    3. To create the unit testing we need to test classes 
+    4. Syntax : 
+    		@isTest
+    		public /private class className{
+    			testmethods
+    		}
+    5. How to define test methods 
+    	a. Every test method should have 
+    			1. isTest annotation 
+    				  or 
+    			2. testMethod keyword 
+    
+    	b. Every test method is a static 
+    
+    	c. Every test method will have a return type of void 
+    	
+    	d. Every test method will have zero parameters .
+    
+    	e. Any DML operations we are performing in the test methods will not be commited.
+    
+    	f. syntax : 
+    		@isTest
+    		static void testme(){
+    
+    		 }
+    		testmethod static void testMe(){
+    
+    		}
+    
+    	overall Syntax : 
+    	@isTest
+    	public class Example {
+    		@isTest
+    		static void testme(){
+    
+    		}
+    	}
+    
+    6. System.debug(expression); // This will print the value given by the expression
+    7. System.assertEquals(Expected,actual): If expected and actual value are same it will return true;
+    8. System.assertNotEquals(Expected,actual)
+</apex:page>

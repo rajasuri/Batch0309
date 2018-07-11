@@ -1,0 +1,22 @@
+<apex:page standardController="Account">
+    <apex:sectionHeader title="{!Account.Name}" subtitle="Edit" help="/apex/page" />
+    <apex:form >
+        <apex:pageBlock title="{!Account.Name}" >
+   
+            <apex:pageBlockSection >
+                <apex:outputField value="{!Account.Name}" />
+                 <apex:outputField value="{!Account.Phone}" />
+                 <apex:outputField value="{!Account.industry}" />
+                 <apex:outputField value="{!Account.rating}" />
+                 <apex:outputField value="{!Account.ownership}" />
+                 
+                     <apex:outputField value="{!Account.type}">
+                     <apex:inlineEditSupport />
+                     </apex:outputField>                
+                 <apex:outputField value="{!Account.ownerId}" />
+                 <apex:outputField value="{!Account.AnnualRevenue}" />
+            </apex:pageBlockSection>
+          
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

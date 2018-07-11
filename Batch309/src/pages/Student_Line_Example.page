@@ -1,0 +1,29 @@
+<apex:page controller="Student_Line_Items">
+    <apex:form id="fm">
+        <apex:pageBlock title="Student">
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Name" />
+                    <apex:inputText value="{!std.Name}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Age" />
+                    <apex:inputText value="{!std.age}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Fee" />
+                    <apex:inputText value="{!std.Fee}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+ &nbsp;&nbsp; <apex:commandButton value="Add" action="{!add}" reRender="fm" />
+        </apex:pageBlock>
+        <apex:pageBlock title="Students" rendered="{! students.size>0}">
+            <apex:pageBlockTable value="{!students}" var="a">
+                <apex:column value="{!a.name}" headerValue="Name" />
+                <apex:column value="{!a.age}" headerValue="Age" />
+                <apex:column value="{!a.fee}" headervalue="Fee" />
+
+            </apex:pageBlockTable>          
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

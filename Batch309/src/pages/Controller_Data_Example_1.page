@@ -1,0 +1,7 @@
+<apex:page controller="Student_Data">
+    Name :{!name} <br/> <!-- getName() -->
+    City :{!city} <br/> <!-- getCity() -->
+    Branch:{!branch}<br/>
+    Phone:{!phone}<br/>
+    Age : {!age}
+</apex:page>

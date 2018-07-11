@@ -1,0 +1,26 @@
+<apex:page >
+    Email Services : 
+    1.If you want to send or receive the emails from the salesforce ,we will use Email Services 
+    2.There are two types of email services 
+    	a. Outbound EmailServices 
+    	b. Inbound Email Services 
+    3. Outbound Email Services :
+    	a. If you want to send any email from salesforce to external system we will use outbound Email Services 
+    	b. All the classes and methods required to send email are defined in the Messaging Namespace.
+    	c. Outbound Messages are classified into two types 
+    		1. SingleEmailMessage 
+    		2. MassEmailMessage 
+    	d. Messaging.SingleEmailMessage : 
+    		1. This class is used to create a singleemail message 
+    		2. toaddress, fromAddress, ccAddress, subject,body,attachments 
+    		  void setToAddresses(String[] ) :  This method is used for setting toaddress of a email 
+    		  void setBccAddresses(String[]) :  This method is used for setting bccAddress of a email
+    		  void setCcAddresses(String[])  : This method is used for setting ccAddress of a email
+    		  voi setSubject(string)
+    		  void setPlainTextBody(string)
+    		  void setHtmlBody(String)
+    		  void setSenderDisplayName(String):
+    
+    	e. Messaging.sendEmail(Messaging.SingleEmailMessage[] emails)
+    	  
+</apex:page>

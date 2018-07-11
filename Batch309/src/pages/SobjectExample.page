@@ -1,0 +1,16 @@
+<apex:page controller="Sobject_Message_Example1">
+    <apex:form id="fm">
+        <apex:pageMessages />
+        <apex:pageBlock title="Account">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Submit" action="{!create}" reRender="fm" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:inputField value="{!acc.Industry}" />
+                 <apex:inputField value="{!acc.phone}" />
+                 <apex:inputField value="{!acc.rating}" />
+                 <apex:inputField value="{!acc.annualRevenue}" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

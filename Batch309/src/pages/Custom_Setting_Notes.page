@@ -1,0 +1,85 @@
+<apex:page >
+    Custom Settings:
+    ----------------
+    1. Custom setting is like a custom object.
+    2. it will store the data .
+    3. We can only create primitive fields
+    4. Any data stored in the custom setting can be retrived without writing soql query.
+    5. It is also cache of application
+    6. It can also be called as custom global objects .
+    7. There are two types of custom settings 
+    	a. List 
+    	b. Hierarchy
+    8. List Custom Settings :
+    	a. This will store list of records .
+    	b. Steps to create List custom Setting 
+    		
+    		Step 1: Enable Custom Settings 
+    			    Setup
+    				|---> Adminster
+    					  |---> Data Management 
+    							|---> Schema Settings 
+    								  |---> Enable Custom settings 
+    			
+    		Step 2: Create custom setting 
+    				
+    				Setup
+    				|---> Build
+    					  |---> Develop
+    							|---> Custom Settings 
+    								  |--->New 
+    
+    				Step 1: Enter Custom Setting Name 
+    				Step 2: Choose the custom setting type as List 
+    				Step 3: save 
+    				Step 4: Create the fields in the custom setting 
+    				Step 5: Click on Manage 
+    				Step 6: Enter Data 
+    
+    			Note : By Default Name fields will be created by salesforce.
+    			
+    		Step 3 : How to fetch the data from the custom settings: 
+    				a. getAll() : This method will return all the list of records in the custom setting in the form
+    							  of Map.
+    							
+    							: Name field is the key and CustomSetting is the value.
+    
+    				Example : 
+    				<!--
+    				Map<String,Book__C>  bookMap=Book__c.getAll();
+					Book__c b=bookMap.get(Name);
+					-->
+    
+    9. Hierarchy Custom setting : 
+    	1.If you want to assign different set of value to different  users or profiles we use hierarchy custom setting.
+    	2. Using Hierarchy custom setting we can controll the validations and triggers.
+    	3. Steps to create Hierarchy custom setting 
+    		Setup
+    		|---> Build
+    			  |---> Develop
+    					|---> Custom Settings 
+    
+    		Step 1: Enter Custom Setting Name : Manager
+    		Step 2: Choose Custom Setting type : Hierarchy
+    		Step 3: save 
+    		Step 4: Create the fields  : Active ,Amount 
+    		Step 5: Click on Manage 
+    				a. Enter Default values for every one : Amount : 10000 ,active__c =true 
+    				b. Enter Values for System Admin profile and assign Amount :50000 and active__c =false
+    
+    		How to fetch the values form the custom settings 
+    		
+    		1. Get the user id 
+    			user u=[select id from User where =condition];
+    			Manager__c cust=Manager__c.getInstance(u.id);
+    
+    				or 
+    		2. Get the profileId 
+    			Profile p=[select id from User where =condition];
+    			Manager__c cust=Manager__c.getInstance(p.Id);
+    
+    		UseCases : 
+    		1. We can controll the execution of validations based on the profiles or users 
+    
+    		2. We can controll the execution of triggers based on the profiles or users.
+</apex:page>

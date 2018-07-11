@@ -1,0 +1,40 @@
+<apex:page id="page">
+    <apex:form id="fm">
+        <script>
+        	function show(){
+            	var name=document.getElementById('page:fm:pb:pbs:pbsi1:name').value;
+                
+                var age =document.getElementById('page:fm:pb:pbs:pbsi2:age').value;
+                if(name == ''){
+                    document.getElementById('page:fm:pb:pbs:err1').innerHTML='<font style="color:red">Name is required</font>';
+                }
+                else{
+                	document.getElementById('page:fm:pb:pbs:err1').innerHTML='';
+                }
+                 if(age == ''){
+                    document.getElementById('page:fm:pb:pbs:err2').innerHTML='<font style="color:red">Age is required</font>';
+                }
+                else{
+                	document.getElementById('page:fm:pb:pbs:err2').innerHTML='';
+                }
+            }
+        </script>
+    	<apex:pageBlock title="Calculator" id="pb">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Submit" oncomplete="show()" />
+            </apex:pageBlockButtons>
+        	<apex:pageBlockSection id="pbs">
+            	<apex:pageBlockSectionItem id="pbsi1">
+                    <apex:outputLabel value="Enter Name" />
+                    <apex:inputText id="name" />
+                </apex:pageBlockSectionItem>
+                <apex:outputLabel id="err1" />
+                <apex:pageBlockSectionItem id="pbsi2">
+                    <apex:outputLabel value="Enter Age" />
+                    <apex:inputText id="age" />
+                </apex:pageBlockSectionItem>
+                <apex:outputLabel id="err2" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,39 @@
+<!-- 
+	Controller : 
+	1. If you want to reffer to any apex class from the VF page then we define apex class as controller.
+	2. We can only define one apex class as a controller in the VFpage
+	3. Apex class which we are reffering the VF page should have constructor with out parameters or no constructor.
+	4. All the variables which are accessing in the vf page should be public /global
+	5. Variables should have getter and setter method .
+		getter method : This will take data from apex class and return in the VF page
+		Example : 
+			Integer age ;
+			public Integer getAge(){
+				return age;
+			}
+
+			String name;
+			public String getName(){
+				return name;
+			}
+
+		setter method  : This will take the data from the VF Page and save it to apex class .
+			Integer age ;
+			public void setAge(Integer age){
+				this.age=age;
+			}
+		
+			String name ;
+			public void setName(String name){
+				this.name=name;
+			}
+
+		Shortcut : Integer age {set;get;}
+				 : String name {set;get;}
+
+-->
+
+<apex:page controller="Apex_Example">
+    Name :{! name} <br/><br/>
+    Age :{!age}
+</apex:page>

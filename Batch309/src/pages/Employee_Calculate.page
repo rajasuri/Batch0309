@@ -1,0 +1,24 @@
+<apex:page controller="Employee_Calculation">
+    <apex:sectionHeader title="Employee" subtitle="New Employee" />
+    <apex:form >
+    	<apex:pageBlock title="Employee" id="one" >
+            
+        	<apex:pageBlockButtons location="top">
+                <apex:commandButton value="Submit" action="{!calculate}" reRender="one" />
+                <apex:commandButton value="Cancel" action="{!reset}" reRender="one" />
+            </apex:pageBlockButtons>
+            
+            Name : <apex:inputText value="{!name}" /> <br/><br/>
+            Exp  : <apex:inputText value="{!exp}" /><br/><br/>
+            
+            City : <Apex:selectList size="1" value="{!selected}">
+            			<apex:selectOption itemLabel="Hyd" itemValue="Hyd" />
+             			<apex:selectOption itemLabel="Ban" itemValue="Ban" />
+             			<apex:selectOption itemLabel="Che" itemValue="Che" />
+            </Apex:selectList> <br/><br/>
+            
+            Salary : <apex:inputText value="{!salary}" /> <br/><br/>
+            Bonus  : <apex:inputText value="{!bonus}" />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

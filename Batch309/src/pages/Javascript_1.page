@@ -1,0 +1,28 @@
+<apex:page id="page">
+    <script>
+    	function show(){
+        	var name=document.getElementById('page:fm:name').value;
+            alert('Name :'+name);
+        }
+    	function call(){
+        	var age =document.getElementById('page:fm:pb:age').value;
+            alert('Age :'+age);
+        }
+    	function invoke(){
+        	var city =document.getElementById('page:fm:pb:pbs:pbsi:city').value;
+            alert('City:'+city);
+        }
+    </script>
+    <apex:form id="fm">
+        Enter Name : <apex:inputText id="name" onchange="show()"/><br/><br/>
+        <apex:pageBlock title="PageBlock" id="pb">
+            Enter Age : <apex:inputText id="age"  onchange="call()"/> <br/><br/>
+            <apex:pageBlockSection title="Section1" collapsible="false" id="pbs">
+                <apex:pageBlockSectionItem id="pbsi">
+                	Enter Branch :<apex:inputText id="city" onchange="invoke()" />
+                </apex:pageBlockSectionItem>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

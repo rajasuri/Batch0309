@@ -1,0 +1,42 @@
+<apex:page standardController="Contact" recordSetVar="items">
+    
+    <!--Modification Done by Abhilash*/ -->  
+   
+    <script type="text/javascript">
+        function selectAllCheckboxes(obj,receivedInputID){
+            window.alert('----'+receivedInputID);
+            var inputCheckBox = document.getElementsByTagName("input"); 
+            window.alert('----'+inputCheckBox);
+            window.alert('----'+inputCheckBox.length);
+
+            for(var i=0; i<inputCheckBox.length; i++){          
+                if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){                                     
+                    inputCheckBox[i].checked = obj.checked;
+                }
+            }
+        }
+    </script>
+   <apex:form >
+        <apex:pageBlock title="Contact">
+            <apex:pageBlockTable value="{!items}" var="a"  first="10">
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId')"/>
+                    </apex:facet>
+                     <apex:inputcheckbox id="inputId"/>
+                </apex:column>
+                <apex:column headerValue="Action">
+                    <apex:commandLink value="Edit"  action="{!URLFOR($Action.contact.Edit,a.id)}"/> &nbsp;|&nbsp;
+                    <apex:commandLink value="Del" action="{!URLFOR($Action.contact.Delete,a.id)}"/>
+                </apex:column>
+                <apex:column value="{!a.lastname}" />
+                <apex:column value="{!a.firstname}" />
+                <apex:column value="{!a.phone}" />
+                 <apex:column value="{!a.otherphone}" />
+                <apex:column value="{!a.mobilephone}" />
+                <apex:column value="{!a.email}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock> 
+    
+   </apex:form>
+</apex:page>

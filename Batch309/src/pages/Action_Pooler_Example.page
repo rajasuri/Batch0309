@@ -1,0 +1,7 @@
+<apex:page controller="Action_Pooler_Example">
+    <apex:form id="fm">
+    	<apex:actionPoller interval="5" action="{!show}" reRender="fm" status="myStatus"/>
+        <apex:actionStatus startText="Loading......." id="myStatus"></apex:actionStatus>
+        {!message}
+    </apex:form>
+</apex:page>

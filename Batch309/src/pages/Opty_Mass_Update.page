@@ -1,0 +1,17 @@
+<apex:page standardController="Opportunity" extensions="Opty_Mass_Update" recordSetVar="items">
+    <apex:form >
+    	<apex:pageBlock title="Opportunity">
+            <apex:pageBlockButtons location="top" >
+                <apex:commandButton value="Submit" action="{!updateData}" />
+            </apex:pageBlockButtons>
+        	<apex:pageBlockTable value="{!optyData}" var="a">
+                <apex:column value="{!a.name}" />
+                <apex:column value="{!a.stagename}" />
+                <apex:column value="{!a.closeDate}" />
+                <apex:column value="{!a.amount}" />
+            </apex:pageBlockTable>
+            
+        </apex:pageBlock>
+    </apex:form>
+               
+</apex:page>

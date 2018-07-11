@@ -1,0 +1,25 @@
+<apex:page >
+    <apex:sectionHeader title="Employee" subtitle="Registration" />
+    <apex:form >
+        Name : <apex:inputText /> <br/><br/>
+        Age  : <apex:inputText /> <br/><br/>
+        City : <apex:selectList size="1">
+       			 <apex:selectOption itemLabel="Hyd" itemValue="Hyd" />
+        		 <apex:selectOption itemLabel="Ban" itemValue="Ban" />
+        		 <apex:selectOption itemLabel="Che" itemValue="Che" />
+        	   </apex:selectList>
+        <br/><br/>
+        Gender :  <apex:SelectRadio >
+        			<apex:selectOption itemLabel="Male" itemValue="Male" />
+        			<apex:selectOption itemLabel="FeMale" itemValue="FeMale" />
+        		  </apex:SelectRadio>
+        <br/><br/>
+        Languages : <apex:selectCheckboxes >
+        				 <apex:selectOption itemLabel="English" itemValue="English" />
+        				 <apex:selectOption itemLabel="Telugu" itemValue="Telugu" />
+        		 		 <apex:selectOption itemLabel="Hindi" itemValue="Hindi" />
+        			</apex:selectCheckboxes>
+        <br/><br/>
+        Address	: <apex:inputTextArea rows="4" cols="50" />
+    </apex:form>
+</apex:page>

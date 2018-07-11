@@ -1,0 +1,4 @@
+<apex:page controller="Component_Example">
+    <c:TableCreate columns="{!accFields}" data="{!accList}" />
+    <c:TableCreate columns="{!conFields}" data="{!conList}" />
+</apex:page>

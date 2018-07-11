@@ -1,0 +1,7 @@
+<apex:page controller="Schema_Example_4">
+    <apex:pageBlock title="Objects">
+    	<apex:dataList value="{!objectNames}" var="a">
+        	{!a}
+        </apex:dataList>
+    </apex:pageBlock>
+</apex:page>

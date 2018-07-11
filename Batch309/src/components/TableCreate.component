@@ -1,0 +1,11 @@
+<apex:component >
+    <apex:attribute name="columns" type="String[]" description="List of fields which you want to display" />
+    <apex:attribute name="data" type="Sobject[]" description="List of records which you want to display" />
+    <apex:pageBlock title="List of Records">
+    	<apex:pageBlockTable value="{!data}" var="record">
+        	<apex:repeat value="{!columns}" var="col">
+                <apex:column value="{!record[col]}" />
+            </apex:repeat>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:component>

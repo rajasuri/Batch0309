@@ -1,0 +1,103 @@
+<apex:page >
+Apexpages:
+-----------
+    1. It is a namespace which has some predefined apex classes 
+    2. Example : 
+       a. Apexpages.StandardController 
+       b. Apexpages.StandardSetController
+       c. Apexpages.Message
+       d. Apexpages.Action
+       e. Apexpages.Component
+    
+    3. Apexpages.StandardController :
+    	a. StandardController : 
+    		1. It is predefined apex class .
+    		2. This is used in the extentions concept in VF page .
+    		3. This will reffer to instance sobject.
+    				  or 
+    		4. This will reffer record which accessed on the VF page .
+    			
+    			Example : 
+    			Account acc =new Account(Name='Wipro',Industry='Banking',Rating='Hot');
+    			Apexpages.StandardContoller ac= new Apexpages.StandardController(acc);
+    
+    			Example : 
+    			Account acc=[select id ,Name,phone from Account where Industry='Banking' limit 1];
+    			Apexpages.StandardController ac=new Apexpages.StandardController(acc);
+    
+    		5. StandardController class has some pre-defined methods to perform DML or fetch the data .
+    
+    		6. Methods : 
+    			a. getId() : This method will return the Id of the record reffered by the standardController 
+    				Example : 
+    				Account acc =[select id ,Name from Account where Name='Wipro'];
+    				Apexpages.StandardController con=new Apexpages.StandardController(acc);
+    				Id accId =con.getId();
+    
+    			b. getRecord() : This will return the record which was reffered by standardController.
+    				
+    				Syntax :  Sobject getRecord()
+    
+    				Account acc=(Account) con.getRecord();
+    
+    			c. save()  : This save the record which was reffered by standardController and return to the 
+    						 detail page of the updated record.
+    						
+    						: Syntax : PageReference save()
+    
+    			d. edit() : This will return to the edit page of the record which is reffered by the standardController.
+    					  : Syntax : pageReference edit()
+    
+    			e. view() : This will return the detail page of the record which is reffered by standardController 
+    
+    			f. reset(): This will reset the changes that are made on the field values .
+    
+    			g. delete(): This will delete the record  
+    		
+    			h. cancel() : This will return to the cancel page of the record.
+    	
+    			i. addFields(fields): This will specify which fields of the records should be queried by standardCOntroller.
+    
+    
+    
+    Apexpages.StandardSetController : 
+    1. It is pre-defined apex class .
+    2. it will reffer to group of records from the standardcontroller 
+    3. It will be used in extentions or pagination concept.
+    4. It has some pre-defined methods 
+    	a. getRecord()
+    	b. getRecords()
+    	c. getSelected()
+    	d. getId()
+    	e. first()
+    	f. last()
+    	g. next()
+    	h. previous()
+    	i. hasNext()
+    	j. hasPrevious()
+    	k. setPageSize(size)
+    	l. getPageSize()
+    	m. getResultSize()
+    	n. setPageNumber()
+    	o. getPageNumber()
+ ================================================================================================================================
+    	Extention : 
+    	1. If you want to use standard functionalities of any sobject then we use StandardController .
+    	2. If you want customize some of the standard functionalities on the page then we use Extentions.
+    	3. But in the VF page we cannot use StandardController and Controller together .
+    	4. We are defining apex class as extention .
+    	5. Steps to create an apex class as an extention 
+    		
+    		public class Example {
+    			public Example(Apexpages.StandardController controller){
+    					//controller is reffering the same record which VF page is using 
+    			}
+    		}
+    
+       6. We can define more than one apex class as an extention.
+       7. If you deinfe more than one apex class as extention ,them thier order of execution is left to right.
+    
+  		Uses : 
+    	1. it is used to override standard buttons /links
+    	2. it is used to create custom buttons /links on the standard pages.
+</apex:page>

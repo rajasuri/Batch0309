@@ -1,0 +1,20 @@
+<apex:page >
+    <apex:includeScript value="{!URLFOR($Resource.MyJquery,'/Jquery/js/jquery-1.8.3.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.MyJquery,'/Jquery/js/jquery-ui-1.9.2.custom.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.MyJquery,'/Jquery/js/jquery-ui-1.9.2.custom.min.js')}" />
+    <script>
+    var j$=jQuery.noConflict();
+    j$(document).ready(function(){
+        j$('[Id$=name]').change(function(){
+            var name=j$('[Id$=name]').val();
+            alert('Your Name:'+name);
+            console.log(name);
+        });
+    });
+    </script>
+    <apex:form >
+        <apex:pageBlock title="Example" id="pb">
+            Enter Name :<apex:inputText id="name" />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

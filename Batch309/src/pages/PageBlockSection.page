@@ -1,0 +1,42 @@
+<!--<apex:pageBlockSection>
+1. It is a child component of pageblock.
+2. This will divide the row into number of columns 
+3. In each column one component will be displayed.
+4. Attributes : 
+	1. columns : 
+		a. This will take integer value.
+		b. This will specify row should be divided into how many number of columns.
+		c. If you dont specify the value , by default it will take two columns.
+
+	2. title   :
+		a. It is a string value .
+		b. This will be printed on the header of the column
+		
+	3. Collapsible : 
+		a. it is a boolean value.
+		b. When it is set as true ,collapisble will be enabled.
+
+	4. rendered  : 
+		a. it is a boolean value 
+		b. When set as true ,pageBlockSection wil be displayed.
+
+-->
+
+<apex:page >
+    <apex:form >
+    	<apex:pageBlock title="Block1">
+        	<apex:pageBlockSection title="Block1" collapsible="true" columns="4">
+                <apex:outputLabel value="Enter Name" />
+                <apex:inputText />
+                <apex:outputLabel value="Enter Age" />
+                <apex:inputText />
+                </apex:pageBlockSection>
+            <apex:pageBlockSection title="Block2" collapsible="false" columns="4">
+                <apex:outputLabel value="Enter City " />
+                <apex:inputText />
+                <apex:outputLabel value="Enter Place" />
+                <apex:inputText />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

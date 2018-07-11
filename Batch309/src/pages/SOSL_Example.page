@@ -1,0 +1,23 @@
+<apex:page controller="SOSL_Example">
+    <apex:pageBlock title="Accounts">
+    	<apex:pageBlockTable value="{!accounts}" var="a">
+            <apex:column value="{!a.name}" />
+            <apex:column value="{!a.industry}" />
+            <apex:column value="{!a.phone}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    <apex:pageBlock title="Contacts">
+    	<apex:pageBlockTable value="{!contacts}" var="a">
+            <apex:column value="{!a.lastname}" />
+            <apex:column value="{!a.firstname}" />
+            <apex:column value="{!a.phone}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+     <apex:pageBlock title="Opportunities">
+    	<apex:pageBlockTable value="{!optyList}" var="a">
+            <apex:column value="{!a.name}" />
+            <apex:column value="{!a.stagename}" />
+            <apex:column value="{!a.closeDate}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

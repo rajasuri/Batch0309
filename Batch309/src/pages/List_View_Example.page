@@ -1,0 +1,47 @@
+<apex:page standardController="Account" recordSetVar="items">
+    <apex:form >
+    	<apex:tabPanel >
+        	<apex:tab label="PageBlockTable">
+            	<apex:pageBlock title="PageBlockTable">
+                	<apex:pageBlockTable value="{!items}" var="a">
+                        <apex:column value="{!a.name}" />
+                        <apex:column value="{!a.phone}" />
+                        <apex:column value="{!a.industry}" />
+                        <apex:column value="{!a.rating}" />
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+            </apex:tab>
+            <apex:tab label="DataTable">
+            	<apex:pageBlock title="PageBlockTable">
+                	<apex:dataTable value="{!items}" var="a">
+                        <apex:column value="{!a.name}" />
+                        <apex:column value="{!a.phone}" />
+                        <apex:column value="{!a.industry}" />
+                        <apex:column value="{!a.rating}" />
+                    </apex:dataTable>
+                </apex:pageBlock>
+            </apex:tab>
+            <apex:tab label="DataList">
+            	<apex:pageBlock title="DataList">
+                	<apex:dataList value="{!items}" var="a">
+                    	{!a.name} 
+                        {!a.phone} 
+                        {!a.Industry} 
+                        {!a.rating} 
+                        
+                    </apex:dataList>
+                </apex:pageBlock>
+            </apex:tab>
+            <apex:tab label="Repeat">
+            	<apex:pageBlock title="DataList">
+                	<apex:repeat value="{!items}" var="a">
+                    	{!a.name} 
+                        {!a.phone} 
+                        {!a.Industry} 
+                        {!a.rating}  
+                    </apex:repeat>
+                </apex:pageBlock>
+            </apex:tab>
+        </apex:tabPanel>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,24 @@
+<apex:page controller="Calc_Example" id="page">
+    <script>
+    	function call(){
+            var aval=document.getElementById('page:fm:pb:aval').value;
+             var bval=document.getElementById('page:fm:pb:bval').value;
+            if(aval>0 && bval>0){
+            	fun(30,40);
+            }else{
+            	alert('AVal ,BVal should be greater than zero');
+            }
+        }
+    </script>
+    <apex:form id="fm">
+        <apex:actionFunction name="fun" action="{!add}" reRender="fm" >
+            <apex:param name="dval" assignTo="{!dval}" value="" />
+            <apex:param name="eval" assignTo="{!eval}" value="" />
+        </apex:actionFunction>
+    	<apex:pageBlock id="pb" title="Example">
+            Enter AVal : <apex:inputText value="{!aval}" id="aval" onchange="call()" /> <br/><br/>
+            Enter BVal : <apex:inputText value="{!bval}" id="bval" onchange="call()"  /> <br/><br/>
+            Enter CVal : <apex:inputText value="{!cval}" id="cval" />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

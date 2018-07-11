@@ -1,0 +1,15 @@
+<apex:page controller="Intrest_Calculator">
+    <apex:sectionHeader title="Intrest" subtitle="Calculator" />
+    <apex:form >
+    	<apex:pageBlock title="Calculator" id="one">            
+        	<apex:pageBlockButtons location="top">
+                <apex:commandButton value="Calculate" action="{!calculate}" reRender="one"/>
+                <apex:commandButton value="Reset" action="{!reset}" reRender="one" />
+            </apex:pageBlockButtons>
+            Amount : <apex:inputText value="{!amount}" /><br/><br/>
+            Rate   :<apex:inputText value="{!rate}" /> <br/><br/>
+            Years  :<apex:inputText value="{!years}" /> <br/><br/>	 
+            <apex:outputLabel value="Intrest  :{!intrest}" rendered="{! !ISNULL(intrest)}" />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

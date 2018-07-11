@@ -1,0 +1,26 @@
+<apex:page id="page">
+    <script src="/soap/ajax/43.0/connection.js" type="text/javascript">
+    </script>
+    <script>
+    	function call(){
+            sforce.connection.sessionId='{!GETSESSIONID()}';
+        	var industry= document.getElementById('page:fm:pb:name').value;
+            var query='select name from Account where industry=\''+industry+'\'';
+            var queryResult=sforce.connection.query(query);
+            var accounts=queryResult.getArray('records');
+            var result='';
+            for(var i=0;i<accounts.length;i++){
+                result=result+'<br/>'+accounts[i].Name;
+            }
+            document.getElementById('page:fm:pb:res').innerHTML=result;
+        }
+    </script>
+    <apex:form id="fm">
+    	<apex:pageBlock title="Example" id="pb">
+            <apex:inputText id="name" />
+            <apex:commandButton value="Submit" oncomplete="call()" /> <br/><br/>
+            <apex:outputLabel id="res" />
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

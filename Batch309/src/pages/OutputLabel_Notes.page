@@ -1,0 +1,27 @@
+<!--
+<apex:outputLabel>
+1.This component is used to print the messsage /label on the page.
+2.Attributes 
+	a. value  : 
+		1. What the value/label/message we want to print is given as value
+
+	b. rendered :
+		1. It is a boolean value .
+		2. When it set as true ,label will be displayed 
+		3. When set as false ,label will be hidden.
+
+	c. style : 
+		1. It will specify the css for the label
+	
+	d. title : 
+		1. When we keep the cursor tip on the label ,pop-up box will be display this text message 
+-->
+
+<apex:page controller="OutputLabel_Example">
+    Enter Name : <br/>
+    <apex:outputLabel value="Enter Name" /><br/><br/>
+    <apex:outputLabel value="Enter Name:" rendered="{!flag}" /><br/><br/>
+    <apex:outputLabel value="{!label}" /><br/><br/>
+    <apex:outputLabel >{!label}</apex:outputLabel><br/><br/>
+    <apex:outputLabel title="MyLabel" value="Enter Mobile" style="color:red" />
+</apex:page>

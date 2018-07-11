@@ -1,0 +1,26 @@
+<apex:page >
+     <script src="https://code.jquery.com/jquery-1.8.2.js">
+    </script>
+    <script src="https://code.jquery.com/ui/1.9.0/jquery-ui.js" >
+    </script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css"/>
+     <script src="/soap/ajax/43.0/connection.js" type="text/javascript">
+    </script>
+    <script>
+    	sforce.connection.sessionId='{!GETSESSIONID()}';
+    	var query='select Name from Product2';
+    	var queryResult=sforce.connection.query(query);
+    	var records=queryResult.getArray('records');
+    	var prodNames=[];
+    	for(var i=0; i<records.length; i++){
+        	prodNames[i]=records[i].Name;
+        }
+    	var j$=jQuery.noConflict();
+    	j$(document).ready(function(){
+        	j$('[Id$=name]').autocomplete({source :prodNames});
+        });
+    </script>
+    <apex:form >
+        ProductName : <apex:inputText id="name" />
+    </apex:form>
+</apex:page>

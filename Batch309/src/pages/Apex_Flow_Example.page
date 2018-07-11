@@ -1,0 +1,10 @@
+<apex:page controller="Flow_Apex_Example">
+    <Apex:pageBlock >
+    	<apex:pageBlockTable value="{!accounts}" var="a">
+            <apex:column value="{!a.name}" />
+        </apex:pageBlockTable>
+        <apex:pageBlockTable value="{!contacts}" var="a">
+            <apex:column value="{!a.lastname}" />
+        </apex:pageBlockTable>
+    </Apex:pageBlock>
+</apex:page>

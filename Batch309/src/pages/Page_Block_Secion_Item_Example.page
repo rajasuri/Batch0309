@@ -1,0 +1,26 @@
+<apex:page controller="PageBlock_Section_Example" showHeader="false" >
+    <apex:sectionHeader title="Calcultor" subtitle="Example"/>
+    <apex:form >
+    	<apex:pageBlock title="Calculator">
+        	<apex:pageBlockButtons location="Top">
+                <apex:commandButton value="Add" action="{!add}" reRender="sec1" />
+                 <apex:commandButton value="Mul" action="{!mul}" reRender="sec1" />
+                <apex:commandButton value="Reset" action="{!reset}" reRender="sec1" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1" id="sec1">
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="AVal" />
+                    <apex:inputText value="{!aval}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="BVal" />
+                    <apex:inputText value="{!bval}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Result" />
+                    <apex:inputText value="{!result}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>   
+    </apex:form>
+</apex:page>

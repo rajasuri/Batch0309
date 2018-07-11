@@ -1,0 +1,20 @@
+<apex:page standardController="Account" extensions="Mass_Email_Alerts" >
+    <apex:form >
+    	<apex:pageBlock title="Account">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="SendEmail" action="{!sendAlert}" />
+            </apex:pageBlockButtons>
+        	<apex:pageBlockSection title="Account" collapsible="false">
+                <apex:inputField value="{!acc.Name}" />
+                <apex:inputField value="{!acc.Phone}" />
+                <apex:inputField value="{!acc.industry}" />
+                <apex:inputField value="{!acc.rating}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockTable value="{!contacts}" var="a">
+                <Apex:column value="{!a.lastname}" />
+                <apex:column value="{!a.firstname}" />
+                <apex:column value="{!a.email}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

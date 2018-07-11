@@ -1,0 +1,41 @@
+<apex:page id="page">
+    <apex:form id="fm">
+        <apex:pageBlock title="Calculator" id="pb">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Add" oncomplete="show()" />
+                <apex:commandButton value="Mul" oncomplete="mul()" />
+            </apex:pageBlockButtons>
+            <script>
+                function show(){
+                    
+                    var aval=document.getElementById('{!$Component.pb.pbs.pbsi1.aval}').value;
+                    var bval=document.getElementById('page:fm:pb:pbs:pbsi2:bval').value;
+                    var cval=parseInt(aval)+parseInt(bval);
+                    document.getElementById('{!$Component.pb.pbs.pbsi3.cval}').value=cval;
+                }
+                function mul(){
+                    
+                    var aval=document.getElementById('{!$Component.pb.pbs.pbsi1.aval}').value;
+                    var bval=document.getElementById('page:fm:pb:pbs:pbsi2:bval').value;
+                    var cval=parseInt(aval)* parseInt(bval);
+                    console.log(cval);
+                    document.getElementById('{!$Component.pb.pbs.pbsi3.cval}').value=cval;
+                }
+            </script>
+            <apex:pageBlockSection columns="1" id="pbs">
+                <apex:pageBlockSectionItem id="pbsi1">
+                    <apex:outputLabel value="Enter Aval" />
+                    <apex:inputText id="aval" alt="" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pbsi2">
+                    <apex:outputLabel value="Enter Bval" />
+                    <apex:inputText id="bval" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pbsi3">
+                    <apex:outputLabel value="CVal" />
+                    <apex:inputText id="cval" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

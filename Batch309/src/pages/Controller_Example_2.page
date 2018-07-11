@@ -1,0 +1,7 @@
+<apex:page controller="Employee_Data">
+    LastName : {!lastname} <br/>
+    FirstName :{!firstName} <br/>
+    Salary  :{!salary} <br/>
+    Exp    :{!exp} <br/>
+    Bonus: {!bonus}
+</apex:page>

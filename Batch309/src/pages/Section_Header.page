@@ -1,0 +1,23 @@
+<!--
+<apex:sectionHeader> :
+1. This component is used to create a header for the page .
+2. Attributes :
+    title    : 1. It is a string value 
+             : 2. This will be displayed as a title for the header.
+    subtitle : 1. It is a string value.
+             : 2. This will be displayed as sub-title for the header.
+    
+    rendered : 1. It is a boolean value .
+             : 2. When set as true ,component will be displayed.
+             : 3. When set as false, component will be hidden.
+
+    help     : 1.  It is a url of the page .
+               2.  When we click on the help corresponding which page need to be opened is given 
+                   as help
+
+     description :1. It is string message 
+
+-->
+<apex:page >
+    <apex:sectionHeader title="Student" subtitle="New Student" help="/apex/page" description="This is first page" rendered="true"/>
+</apex:page>

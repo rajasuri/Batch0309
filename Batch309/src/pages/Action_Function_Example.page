@@ -1,0 +1,24 @@
+<apex:page controller="JavaScript_3" id="page">
+    <script>
+    	function show(){
+            var accname=document.getElementById('page:fm:pb:name').value;
+            var accbranch=document.getElementById('page:fm:pb:branch').value;
+            if(accname!='' && accbranch!=''){
+        		myCall(accname,accbranch);
+            }else{
+            	alert('Enter Name and branch ');
+            }
+        }
+    </script>
+    <apex:form id="fm">
+        <apex:actionFunction name="myCall" action="{!invoke}" reRender="one" >
+            <apex:param name="name" assignTo="{!name}" value="" />
+            <apex:param name="branch" assignTo="{!branch}" value="" />
+        </apex:actionFunction>
+    	<apex:pageBlock title="Example" id="pb">
+            Enter Name : <apex:inputText id="name" onchange="show()"/> <br/><br/>
+            Enter Branch:<apex:inputText id="branch" onchange="show()" /><br/><br/>
+            Result :<apex:outputLabel value="{!result}" id="one" />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

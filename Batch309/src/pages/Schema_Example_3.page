@@ -1,0 +1,8 @@
+<apex:page controller="Schema_Example_3">
+    <apex:pageBlock title="PickList">
+    	<apex:pageBlockTable value="{!optionsMap}" var="fld">
+            <apex:column value="{!fld}" headerValue="Field Name" />
+            <apex:column value="{!optionsMap[fld]}" />           
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

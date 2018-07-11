@@ -1,0 +1,13 @@
+<apex:page controller="Input_Example_2">
+    <apex:sectionHeader title="Calculator" subtitle="Example" />
+    <apex:form id="fm">
+        AValue : <apex:inputText value="{!aval}" /> <br/><br/>
+        BValue : <apex:inputText value="{!bval}" /> <br/><br/>
+        Result :<apex:inputText value="{!result}" id="res" /> <br/><br/>
+        
+        <apex:commandButton value="Add" action="{!add}" reRender="res" />
+        <apex:commandButton value="Mul" action="{!mul}" reRender="res"/>
+        <apex:commandButton value="Cancel" action="{!cancel}" reRender="fm"/>
+        
+    </apex:form>
+</apex:page>

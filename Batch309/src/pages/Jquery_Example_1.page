@@ -1,0 +1,11 @@
+<apex:page >
+    <apex:includeScript value="{!URLFOR($Resource.MyJquery,'/Jquery/js/jquery-1.8.3.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.MyJquery,'/Jquery/js/jquery-ui-1.9.2.custom.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.MyJquery,'/Jquery/js/jquery-ui-1.9.2.custom.min.js')}" />
+    <script>
+    var j$=jQuery.noConflict();
+    if(j$){
+        alert('success');
+    }
+    </script>
+</apex:page>

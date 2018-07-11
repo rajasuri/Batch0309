@@ -1,0 +1,51 @@
+<!--
+<apex:inputField> <apex:outputField> :
+1. This two components will respect the properties of the fields of the object.
+
+<apex:inputText,<apex:outputText>:
+1. This two components will not respect the properites of the given fields /
+-->
+<apex:page standardController="Account">
+    <apex:form >
+    	<apex:pageBlock title="Account">
+            <apex:pageBlockSection title="OutputField">
+                <apex:inlineEditSupport >
+            	 <apex:outputField value="{!Account.Name}" />
+                 <apex:outputField value="{!Account.Phone}" />
+                 <apex:outputField value="{!Account.Industry}" />
+                 <apex:outputField value="{!Account.rating}" />
+                 <apex:outputField value="{!Account.ownership}" />
+                 <apex:outputField value="{!Account.type}" />
+                </apex:inlineEditSupport>
+            </apex:pageBlockSection>
+             <apex:pageBlockSection title="OutputText">
+                <apex:inlineEditSupport >
+            	 <apex:outputText value="{!Account.Name}" />
+                 <apex:outputText value="{!Account.Phone}" />
+                 <apex:outputText value="{!Account.Industry}" />
+                 <apex:outputText value="{!Account.rating}" />
+                 <apex:outputText value="{!Account.ownership}" />
+                 <apex:outputText value="{!Account.type}" />
+                </apex:inlineEditSupport>
+            </apex:pageBlockSection>
+            
+            <!--Modification Done By Abhilash-->
+            
+            <apex:pageBlockSection title="InLineEditing Property For Particular Field">
+                
+                <apex:outputField value="{!Account.Name}" >
+                     
+                    </apex:outputField>
+                                
+                 <apex:outputField value="{!Account.Phone}" />
+                 <apex:outputField value="{!Account.Industry}" />
+                 <apex:outputField value="{!Account.rating}" />
+                 <apex:outputField value="{!Account.ownership}" />
+                 <apex:outputField value="{!Account.type}" />
+                
+            </apex:pageBlockSection>
+           
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

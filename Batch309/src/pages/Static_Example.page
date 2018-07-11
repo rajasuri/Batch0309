@@ -1,0 +1,5 @@
+<apex:page >
+    <apex:image value="{!$Resource.Test}" />
+    <apex:image value="{!URLFOR($Resource.MyData,'/Capital/Images/icici.png')}" />
+    <apex:image value="{!URLFOR($Resource.MyData,'/Capital/Images/capialinfo.png')}" />
+</apex:page>

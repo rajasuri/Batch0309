@@ -1,0 +1,63 @@
+<!--
+<apex:page>:
+1. Every VF Page will start and end with <apex:page>
+2. Attributes : 
+	a. apiVersion  : 1. It will specify which version of api we are using .
+					 2. If you dont specify the version latest version will be taken 
+					 3. Current version :42.0
+
+	b. Id		   : 1. It is a unique string provided 
+					 2. Id will be used to reffer to the elements in the Page uniquely.
+
+	c.showHeader   : 1. It is a boolean value .
+					 2. When set as true ,salesforce standard Header and sidebar components will be displayed.
+					 3. When set as false,Ssalesforce standard Header and sidebar component will be hidden.
+					 4. Default value is true
+
+	d. sidebar	   : 1. It is a boolean value.
+					 2. When set as true,salesforce standard sidebar components will be displayed.
+					 3. When set as false,sidebar components will be hidden.
+					 4. Default value is true.
+
+	e. rendered    : 1. It is a boolan value .
+					 2. When set as true, content of the component will be displayed.
+					 3. When set as false,conent of the component will be hidden.
+					 4. Default value is true.
+
+	f. setup	   : 1. It is a boolean value.
+					 2. When set as true ,force.com menu will be displayed on the sidebar 
+					 3. When set as false ,salesforce sidebar components will be displayed.
+					 4. Default value is false.
+
+	g.renderAs	   : if you want to generate the output of the page in the form PDF then we use 
+					 renderAs as PDF
+
+	h.contentType : 1. If you want content of the page to be generated in the form in the form of 
+					    excel of word we use this 
+
+					 2. Excel : contentType="vnd.ms-excel#pagename.xls"  // view and display in the form of excel
+
+					 3. Word  : contentType="vnd.msword#pagename.doc"
+
+	i. standardController: 1. If you want to reffer to properties of any sobject, then we use standardController.
+						   2. Sobject can be standardObject or a custom object 
+						   3. We can only reffer one sobject as standard Controller.
+							Example : StandardController="Account" 
+									  StandardCOntroller="Customer__c" 
+
+	j. Controller	: 1. If you want to reffer to Custom Propeties ,then we defien apex class as controller.
+					  2. We can use only one apex class as controller 
+						 Example : Controller="Example"
+
+	k. extention    : 1. If you want to use some of the standard properties of sobject and some custom propeties 
+						 of apex class then we use extentions
+
+	l. action		: 1. When the VF page is loaded ,if you want any action to be performed we define that action
+						 action="/apex/page"
+						 action="{!show}"
+		
+-->
+<apex:page contenttype="vnd.msword#mypage.doc"> 
+    This is page one 
+   
+</apex:page>

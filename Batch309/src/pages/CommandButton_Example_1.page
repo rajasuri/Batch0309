@@ -1,0 +1,10 @@
+<apex:page controller="CommandButton_Example_1">
+    <apex:sectionHeader title="Employee" subtitle="New Employee" />
+    <apex:form id="one">
+        <apex:commandButton value="Submit" action="{!invoke}" rerender="one" /> <br/><br/>
+        Name :{! name} <br/>
+        Age  :{!age} <br/>
+        Salary:{!salary} <br/>
+        Bonus:{!bonus}
+    </apex:form>
+</apex:page>

@@ -1,0 +1,49 @@
+<!--
+<apex:commandButton> : 
+1. This is used to create a button on the page .
+2. commandButton should be a child of <apex:form>
+3. Attributes : 
+	a. value 	: 1. It is a string 
+			   	  2. This will be displayed as a label on the button.
+	b. disabled : 1. It is a boolean value.
+				: 2. When set as true ,button will be disabled 
+			
+	c. rendered : 1. It is a boolean value.
+				: 2. When set as true,commnadbutton will be displayed.
+				: 3. When set as false ,button will be hidden
+				: 4. Default value is true
+
+	d. action	: 1. When we click on the button what is the action that should be performed.
+				  2. Action can be a link or a method from apex class.
+	
+	e. reRender : 1. Refresh only that element whoes id is provided.
+				Note :when we click on the button entire page will be reloaded ,if you want part of the page to
+					  be reloaded then we use reRender
+
+	f. Style 	: 1. If you want to apply any css then we use Sytle attibute
+
+	Note : If you want to invoke any method from the apex class in the VF page 
+		 	1. Method should have return type as void or PageReference only
+			2. Method should not contain any parameters 
+
+-->
+
+
+<apex:page controller="Employee_Data">
+    <apex:form id="one">
+        <apex:commandButton value="Submit" />
+        <apex:commandButton value="Cancel" disabled="true" />/
+        <apex:commandButton value="Delete" rendered="false" />
+        <apex:commandButton value="Call" action="/apex/Controller_Example_2" />
+        <apex:commandButton value="ReCall" action="{!invoke}" />
+         <apex:commandButton value="Refresh" action="{!invoke}" reRender="one"/>
+        <apex:commandButton value="Style" style="background:yellow;color:red" />
+        <br/><br/>
+        LastName : {! LastName} <br/>
+        FirstName:{! firstname} <br/>
+        Exp	:{!exp}<br/>
+        Salary:{!salary} <br/>
+        Bonus:{!bonus}<br/>
+        
+    </apex:form>
+</apex:page>

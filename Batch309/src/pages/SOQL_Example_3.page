@@ -1,0 +1,19 @@
+<apex:page controller="SOQL_Example_3">
+    <apex:form >
+    	<apex:pageBlock title="SOQL_Result">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Fixed_Limit" action="{!fixed_limit}" reRender="one" />
+                <apex:commandButton value="Fixed_Offset" action="{!fixed_Offset}" reRender="one" />
+                <apex:commandButton value="Dynamic_Limit" action="{!dynamic_limit}" reRender="one" />
+                <apex:commandButton value="Dynamic_Offset" action="{!dynamic_offset}" reRender="one" />
+                <apex:commandButton value="Limit_Offset" action="{!limit_offset}" reRender="one" />
+            </apex:pageBlockButtons>
+        	<apex:pageBlockTable value="{!accounts}" var="a" id="one">
+                <apex:column value="{!a.name}" />
+                <apex:column value="{!a.industry}" />
+                <apex:column value="{!a.phone}" />
+                <apex:column value="{!a.rating}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

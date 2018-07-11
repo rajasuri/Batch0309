@@ -1,0 +1,41 @@
+<!-- 
+<apex:pageBlock>
+1. This is used to create block on the page .
+2. Attributes : 
+	a. title 	: It is a string ,which will be printed on the header of the block.
+	b. helpTitle: It is a string value ,which will be displayed on the right corner of the pageBlock
+	c. helpUrl	: When we click on the helpTitle ,which page should be opened is defiend by helpUrl
+			    : It is a url of a page.
+	d. dir		: This will specify the direction in which content of the block should be displayed.
+				: Possible values are RTL,LTR
+	e. tabStyle : This will take sobject as a value ,
+				: Which ever the object name we have given that object tab style will be applied on 
+				  pageblock
+
+	f. Mode	: This will specify in which pageblock should be opened.
+			: Possible values are edit,maindetail
+	
+	g. rendered: it is boolean value .
+			   : When set as true,content of the block will be displayed.
+-->
+
+<apex:page >
+    <apex:pageBlock >
+    	This is block1
+    </apex:pageBlock>
+     <apex:pageBlock title="Block2">
+    	This is block2
+    </apex:pageBlock>
+    <apex:pageBlock title="Block3" helpTitle="needHelp?" helpUrl="/apex/page">
+    	This is block3
+    </apex:pageBlock>
+     <apex:pageBlock title="Block4" dir="RTL">
+    	This is block1
+    </apex:pageBlock>
+     <apex:pageBlock title="Block5" tabStyle="Lead">
+    	This is block1
+    </apex:pageBlock>
+     <apex:pageBlock title="Block6" mode="maindetail">
+    	This is block1
+    </apex:pageBlock>
+</apex:page>

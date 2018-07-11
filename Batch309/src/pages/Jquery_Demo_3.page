@@ -1,0 +1,56 @@
+<apex:page >
+    <apex:includeScript value="{!URLFOR($Resource.MyJquery,'/Jquery/js/jquery-1.8.3.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.MyJquery,'/Jquery/js/jquery-ui-1.9.2.custom.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.MyJquery,'/Jquery/js/jquery-ui-1.9.2.custom.min.js')}" />
+    <script>
+    	var j$=jQuery.noConflict();
+    	j$(document).ready(function(){ 
+        	j$('[Id$=one]').hide();
+            j$('[Id$=two]').hide();
+            j$('[Id$=city]').change(function(){
+            	var city =j$('[Id$=city]').val();
+                if(city=='Hyd'){
+                    j$('[Id$=one]').show();
+                    j$('[Id$=two]').hide();
+                }else{
+                	j$('[Id$=one]').hide();
+                    j$('[Id$=two]').show();
+                }
+            });
+        });
+    </script>
+    <apex:form >
+    	<apex:pageBlock title="Employee">
+        	<apex:pageBlockSection title="Employee Basic Detail" columns="1" collapsible="false">
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter Name" />
+                    <apex:inputText />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter City" />
+                    <apex:inputText id="city" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Employee Education" id="one" columns="1" collapsible="false">
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Qualification" />
+                    <apex:inputText />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="College" />
+                    <apex:inputText />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Employee Experience" id="two" columns="1" collapsible="false">
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Experience" />
+                    <apex:inputText />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Salary" />
+                    <apex:inputText />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

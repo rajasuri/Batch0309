@@ -1,0 +1,24 @@
+<apex:page controller="Sobject_Example_2">
+    <apex:form >
+    	<apex:pageBlock title="Customer Create" >
+        	<apex:pageBlockSection title="Account">
+                <apex:inputText value="{!acc.Name}" />
+                <apex:inputField value="{!acc.Phone}" />
+                <apex:inputField value="{!acc.industry}" />
+                <apex:inputField value="{!acc.rating}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contact">
+                <apex:inputField value="{!con.LastName}" />
+                <apex:inputField value="{!con.firstName}" />
+                <apex:inputField value="{!con.phone}" />
+                <apex:inputField value="{!con.email}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Opportunity">
+                <apex:inputField value="{!opty.Name}" />
+                <apex:inputField value="{!opty.stageName}" />
+                <apex:inputField value="{!opty.closeDate}" />
+                <apex:inputField value="{!opty.Amount}" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

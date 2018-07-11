@@ -1,0 +1,13 @@
+<apex:page controller="JavaScript_3">
+    <apex:form >
+    	<apex:pageBlock >
+        	Enter Name : <apex:inputText value="{!name}" >
+            				 <apex:actionSupport event="onchange" action="{!invoke}" reRender="one" />
+           				 </apex:inputText> <br/><br/>
+            Enter Branch : <apex:inputText value="{!branch}">
+            						 <apex:actionSupport event="onchange" action="{!invoke}" reRender="one" />
+            			    </apex:inputText><br/><br/>
+            <apex:outputlabel value="{!result}" id="one" /> 
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

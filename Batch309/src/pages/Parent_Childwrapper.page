@@ -1,0 +1,6 @@
+<apex:page controller="Account_Details">
+    <apex:form >
+        <apex:pageblock title="Account">
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

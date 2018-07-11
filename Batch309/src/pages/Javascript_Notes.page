@@ -1,0 +1,63 @@
+<apex:page >
+    JavaScript :
+    -----------
+    1. It is web based programming language.
+    2. It is designed for client-side operations.
+    3. It will be used to avoid server-side interactions
+    4. It is language independent.
+    5. It is browser indendent.
+    6. It is interpreted language.
+    7. Javascript doesnt have a compiler .
+    8. Any scripting statements you write should be in 
+     	 script tag.
+    9.  
+    <script>
+    	console.log('Testing');
+    	window.alert('Testing');
+    </script>
+    varaiables :
+    In the javascript all the variables are defined as var 
+    Example : 
+    var name;
+    var age ;
+    var salary;
+    var acc;
+    var con;
+    var marsk=1000;
+    
+    comments : 
+    /*  */ === Multiple lines 
+    // ===single line comments 
+   =========================================
+    function : 
+    1. Group of statements running together to achive particular task.
+    2. Syntax ; 
+    	function functionName(parameters){
+    		return value;
+    	}
+    
+    Example : 
+    function show(){
+    
+    }
+    function call(){
+    
+    }
+    function add(){
+    }
+    function add(aval,bval){
+    
+    }
+    function call(name){
+    
+    }
+    function invoke(name,city){
+    
+    }
+    
+    ==> Functions will be invoked when an event occurs on the component.
+    
+    	onclick,onfocus,onchange,onblur,onload, onmouseover,onmouseout,onmousemove....
+    
+    
+</apex:page>

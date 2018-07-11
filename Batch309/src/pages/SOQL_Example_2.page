@@ -1,0 +1,11 @@
+<apex:page controller="SOQL_Example_2">
+    <apex:form >
+    	<apex:pageBlock title="SOQL_Result">
+        	<apex:pageBlockTable value="{!accounts}" var="record"> <!-- record is account record -->
+                 <apex:repeat value="{!fields}" var="fld">
+                     <apex:column value="{!record[fld]}" />
+                </apex:repeat>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

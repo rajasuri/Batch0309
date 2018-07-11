@@ -1,0 +1,28 @@
+<apex:page controller="DML_Example_2">  
+    <apex:form >
+        <apex:pageBlock title="DML_Example">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Save" action="{!create}" />
+                <apex:commandButton value="Reset" action="{!reset}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Account" collapsible="false">
+                 <apex:inputField value="{!acc.Name}" />
+                 <apex:inputField value="{!acc.Phone}" />
+                 <apex:inputField value="{!acc.Industry}" />
+                 <apex:inputField value="{!acc.Rating}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contact" collapsible="false">
+                 <apex:inputField value="{!con.LastName}" />
+                 <apex:inputField value="{!con.Phone}" />
+                 <apex:inputField value="{!con.FirstName}" />
+                 <apex:inputField value="{!con.Email}" />
+            </apex:pageBlockSection>
+             <apex:pageBlockSection title="Opportunity" collapsible="false">
+                 <apex:inputField value="{!opty.Name}" />
+                 <apex:inputField value="{!opty.stageName}" />
+                 <apex:inputField value="{!opty.closeDate}" />
+                 <apex:inputField value="{!opty.amount}" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

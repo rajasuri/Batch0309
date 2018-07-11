@@ -1,0 +1,115 @@
+<apex:page >
+    Schema: 
+    1. it is a namesapce .
+    2. It contain all the classes and methods required to access the metadata.
+    
+    Schema.SobjectType : 
+    1. This will specify which type of sobject we are using 
+    	Example :
+    	sObject 		SobjectType 
+    	-----------------------------------
+    	Account 		Account.sobjectType
+    	Contact			Contact.SobjectType
+    	Customer__c		Customer__c.SobjectType
+    	Sobject			Schema.SObjectType
+    
+    2. getSobjectType() : This method will return you type of sobject we are using .
+    
+    	Account acc =new Account();
+    	Schema.SobjectType obj= acc.getSobjectType(); //  This will specify acc is  a instance of which sobject.
+    	System.debug(obj); // Account
+    
+    3. getDescribe() : 
+    
+    	1.This method return the properties of given sobjectType.
+    	  Like Object Name, Label, Readable ,writable .....
+    
+    	2.Syntax : 
+    		Schema.DescribeSobjectResult getDescribe()
+    
+    		Example : 
+    		Schema.DescribeSobjectResult result=Account.SobjectType.getDescribe();
+    
+    Schema.DescribeSobjectResult : 
+    1. DescribeSobjectResult  is a pre-defined apex class .
+    2. This class contains the methods required to fetch the properites of the given sobject.
+    3. Methods :
+    	getLabel()
+    	getName()
+    	getLabelPural()
+    	isCustom()
+    	isCustomSetting()
+    	isAccessible()
+        isCreateable()
+    	isDeletable()
+    	isFeedEnabled()
+    	isMergeable()
+    	isMruEnabled()
+    	isQueryable()
+    	isSearchable()
+    	isUndeletable()
+    	isUpdateable()
+   	    getIsSubType()
+    	getKey()
+    	fields:
+    	These methods are going to return the values based on the current user context.
+    
+    Fetch the fields from the given sobject : 
+    1. Get the description about the object.
+    	Schema.DescribeSobjectResult result =Account.SobjectType.getDescribe();
+    	a. In the description we have property :fields
+    	b. How to reffer to the fields from the description 
+    		<!--
+    			Map<String,Schema.SobjectField>  fldMap =result.fields.getMap();
+				This will return all the fields of the given sobject from the description.
+    	    -->
+    		<!-- 
+				if you want to reffer to a single field :
+				Schema.SobjectType.Account.Name.getDescribe()
+				Account.Name.getDescribe()
+			-->
+    		In the map field Name is the key and field is value.
+    
+    Schema.SobjectField : 
+    1. This will reffer field of the object.
+    
+    2. If you want to get the field type : getSobjetField();
+    	Account acc =new Account();
+    	acc.Name='Wipro';
+    	Schema.SobjectField fld=acc.name.getSobjectField();
+    
+    3. getDescribe() : This will return the properties of the given field.
+    	
+    	Schema.DescribeFieldResult getDescribe()
+    
+   
+    Schema.DescribeFieldResult : 
+    
+    1. DescribeFieldResult : 
+    	This will contain the classes and methods required for fetching the properties of given field.
+    2. Methods :
+    	a.getType()  :This will return dataType of the field.
+    	isAccessible()
+    	isAutoNumber()
+    	isCalculated()
+    	isCreateable()
+    	isCustom()
+    	isExternalID()
+    	isNameField()
+    	getPickListValues()
+    
+    3. How to check weather the given field datatype is picklist 
+    
+    	Schema.DescribeFieldResult result =Account.Industry.getDescribe();
+    	if(result.getType() == Schema.DisplayType.PICKLIST){
+    	}
+    
+    4. How to fetch existing options from the given picklist 
+    
+    	<!-- List<Schema.PickListEntry > options =result.getPickListValues(); -->
+    
+    5. schema.getGlobalDescribe() : 
+    	This method wil return all the objects in the salesforce in the form of map,
+        where objectName is the key and SobjectType is the value .
+    	<!--  Map<String,Schema.SobjectType> objMap -->
+</apex:page>

@@ -1,0 +1,16 @@
+<apex:page >
+    <script src="/soap/ajax/43.0/connection.js" type="text/javascript">
+    </script>
+    <script>
+    	sforce.connection.sessionId='{!GETSESSIONID()}';
+    	var query='select Name from Account';
+    	// sforce.connection.query(): This statement will return you the result in the form json
+    	var queryResult=sforce.connection.query(query);
+    	// from the result get only records
+    	var accounts=queryResult.getArray('records');
+    	alert(accounts);
+    </script>
+	<apex:form >
+        <apex:inputText id="name" onchange="show()"/>
+    </apex:form>
+</apex:page>

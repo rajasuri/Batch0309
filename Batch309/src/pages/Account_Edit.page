@@ -1,0 +1,21 @@
+<apex:page standardController="Account">		<!-- contact :  LastName,FirstName,Phone ,OtherPhone,Email
+													 Account :Lookup: owner : Lookup(user)
+												-->
+    <apex:form >
+    	<apex:pageBlock title="Account">
+        	<apex:pageBlockSection title="InputField">
+                <apex:inputField value="{!Account.Name}" />
+                <apex:inputField value="{!Account.Industry}" />
+                <apex:inputField value="{!Account.Phone}" />
+                <apex:inputField value="{!Account.rating}" />
+                <apex:inputField value="{!Account.OwnerId}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="InputText">
+                <apex:InputText value="{!Account.Name}" />
+                <apex:InputText value="{!Account.Industry}" />
+                <apex:InputText value="{!Account.Phone}" />
+                <apex:InputText value="{!Account.rating}" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

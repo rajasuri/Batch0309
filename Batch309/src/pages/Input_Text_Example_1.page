@@ -1,0 +1,8 @@
+<apex:page >
+    <apex:sectionHeader title="Student" subtitle="Example" />
+    <apex:form >
+        Enter Name :<apex:inputText required="false"  /> <br/><br/>
+        Enter Age  :<apex:inputText /> <br/> <br/>
+        Enter City :<apex:inputText />
+    </apex:form>
+</apex:page>

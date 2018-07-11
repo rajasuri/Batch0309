@@ -1,0 +1,34 @@
+<apex:page controller="Input_Example_3">
+    <apex:form >
+        InputSecret : <apex:inputSecret />  <br/><br/>
+        InputHidden : <apex:inputHidden /> <br/><br/>
+        InputTextArea: <apex:inputTextArea rows="3" cols="40"  /><br/><br/>
+        InputRichText: <apex:inputTextArea rows="4" cols="100" richText="true" /><br/><br/>
+        CheckBox  	: <apex:inputCheckBox /><br/><br/>
+        ==================================================================<br/><br/>
+        Cities : <apex:selectList value="{!selected}" size="1">
+        				<apex:selectOption itemLabel="-None-" itemValue="none" />
+        				<apex:selectOption itemLabel="Hyd" itemValue="TG" />
+        			    <apex:selectOption itemLabel="Ban" itemValue="KA" />
+        				<apex:selectOption itemLabel="Che" itemValue="TN" />
+        		 </apex:selectList>
+        <apex:commandButton value="Go" action="{!show}" reRender="res"/>
+        <apex:outputLabel value="{!result}" id="res" /><br/><br/>
+         ==================================================================<br/><br/>
+         Cities : <apex:selectRadio value="{!selected}" >
+        				<apex:selectOption itemLabel="-None-" itemValue="none" />
+        				<apex:selectOption itemLabel="Hyd" itemValue="TG" />
+        			    <apex:selectOption itemLabel="Ban" itemValue="KA" />
+        				<apex:selectOption itemLabel="Che" itemValue="TN" />
+        		 </apex:selectRadio>
+                  <br/><br/>
+        ============================================================================<br/><br/>
+         Cities : <apex:selectCheckboxes >
+        				<apex:selectOption itemLabel="-None-" itemValue="none" />
+        				<apex:selectOption itemLabel="Hyd" itemValue="TG" />
+        			    <apex:selectOption itemLabel="Ban" itemValue="KA" />
+        				<apex:selectOption itemLabel="Che" itemValue="TN" />
+        		 </apex:selectCheckboxes>
+        <br/><br/>
+    </apex:form>
+</apex:page>

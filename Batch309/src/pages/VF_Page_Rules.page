@@ -1,0 +1,101 @@
+<apex:page >
+    <!--
+   1.Visualforce page will have an extention of .vfp
+   2.All the visualforce page will start  with <apex:page> 
+   3.All the vf pages will end with </apex:page>
+   4.All the VF page should obey strict xml format .
+      a. Every opening component should have corresponding closing component.
+         Example :
+    		<Name> 
+    			<LastName> Myla</LastName>
+                <FirstName>Satish</FirstName>
+    		</Name>
+   		 <> Opening 
+         < />
+
+		Example : 
+			<Name>
+				<LastName/>
+			</Name>
+
+		b. Inner elements should be closed first then outer elements 
+			<Name>
+				<LastName> Myla</LastName>
+				<FirstName>Satish</FirstName>
+		     </Name>
+
+
+	5. VF Pages can be created in four ways 
+		  a. Standard Navigation :
+			 Classic : 
+			 Setup
+			 |--->Build
+    			  |---> Develop
+    				    |---> Visualforce pages 
+    						  |--->New 
+    							   
+    		Step 1: Enter PageName 
+    		Step 2: Enter Body
+    		Step 3: Save 
+    	
+    		Lightning  :
+    		Setup
+    	    |---->Platform Tools 
+    			  |---> Custom Code 
+    					|---> Visualforce Pages 
+    						  |---> New 
+    
+    							   
+    		Step 1: Enter PageName 
+    		Step 2: Enter Body
+    		Step 3: Save 
+    
+    	 b. Developer Console  :
+    		Classic 
+    			UserName
+    			|---> Developer Console 
+    				  |---> File 
+    						|--->New 
+    							 |--->Visualforce Page
+    								  |---> PageName 
+    										|--->OK
+    
+    
+    		Lightning : 
+    			Setup
+    			|--->Developer Console 
+    				 |---> File 
+    					    |---> New 
+    							  |--->Visulaforce Page
+    								   |--->PageName 
+    										|--->OK
+    
+    
+		c. Using URL 
+    		Step 1: Enable Development Mode 
+    
+    		Classic  : 
+    		UserName
+    		|--->My Settings 
+    			 |---> Personal Information
+    				   |--->Advanced used details 
+    						|--->Edit 
+    							 |--->Enable Development Mode.
+    
+    
+    		Lightning :
+    		User ICON
+    		|---> Settings 
+    			  |---> My Personal Information 
+    					|---> Advanced User Details 
+    						  |---> Edit
+    								|--->Enable Development Mode.
+    
+    	
+    		Step 2: Create a Page 
+    				https://serverinstance.salesforce.com/apex/pageName
+    
+    	d. Using Eclipse 
+    	
+	-->
+</apex:page>

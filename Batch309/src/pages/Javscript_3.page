@@ -1,0 +1,12 @@
+<apex:page controller="JavaScript_3" id="page">
+    <script>
+    	function show(){
+        	document.getElementById('page:fm:hid').value='Satish Myla';
+        }
+    </script>
+    <apex:form id="fm">
+        <apex:inputHidden id="hid" value="{!name}" />
+        <apex:commandButton value="Submit" onclick="show()" action="{!call}" />
+        {!result}
+    </apex:form>
+</apex:page>

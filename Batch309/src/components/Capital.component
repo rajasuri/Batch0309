@@ -1,0 +1,7 @@
+<apex:component >
+    <apex:attribute name="empName" type="String" description="Employee Name" />
+    <apex:attribute name="color" type="String" description="Color Component" />
+    <apex:pageBlock title="{!empName}" >
+        Employee Name :<apex:outputLabel value="{!empName}" style="color:{!color}" />
+    </apex:pageBlock>
+</apex:component>

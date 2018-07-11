@@ -1,0 +1,17 @@
+<apex:page controller="Remote_Example_2" id="page">
+    <script>
+    	function show(){
+        	var name=document.getElementById('page:fm:name').value;
+            var phone=document.getElementById('page:fm:phone').value;
+            Remote_Example_2.create(name,phone,function(result,event){
+            	document.getElementById('page:fm:stat').innerHTML=result;
+            });
+        }
+    </script>
+    <apex:form id="fm">
+        Enter Name :<apex:inputText id="name" /> <br/><br/>
+        Enter Phone  :<apex:inputText id="phone" /><br/><br/>
+        <apex:commandButton value="Submit" oncomplete="show()" />
+        <apex:outputLabel id="stat" />
+    </apex:form>
+</apex:page>
