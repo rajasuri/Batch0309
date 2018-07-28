@@ -8,6 +8,7 @@ global class Account_Create {
         	acc.Phone=phone;
         	insert acc;
             result='Record Created successfully';
+            System.debug('This is checkpoint');
         }catch(Exception e){
             result='Insertion Failed :'+e.getMessage();
         }
